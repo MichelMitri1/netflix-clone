@@ -47,8 +47,8 @@ function LogoutPage() {
               fontSize: "18px",
             }}
           >
-            Just so you know, you don't always need to sign out of Netlfix. It's
-            only necessary if you're on a shared or public computer.
+            Just so you know, you don&apos;t always need to sign out of Netlfix. It&apos;s
+            only necessary if you&apos;re on a shared or public computer.
           </p>
           <p
             style={{
@@ -56,7 +56,7 @@ function LogoutPage() {
               fontSize: "18px",
             }}
           >
-            You'll be directed to Netflix.com in {time} seconds.
+            You&apos;ll be directed to Netflix.com in {time} seconds.
           </p>
           <button
             className={logoutpageStyles.logoutpage__goNowButton}
@@ -96,3 +96,4 @@ function LogoutPage() {
 }
 
 export default LogoutPage;
+
