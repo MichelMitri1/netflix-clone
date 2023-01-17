@@ -4,6 +4,7 @@ import netflixLogo from "../components/assets/netflix logo.png";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../components/firebase.js";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 function Login() {
   const emailRef = useRef("") as unknown as MutableRefObject<HTMLInputElement>;
@@ -32,7 +33,10 @@ function Login() {
 
   return (
     <div className={loginpageStyles.loginpage__container}>
-      <figure className={loginpageStyles.loginpage__logoWrapper} onClick={() => router.push("/")}>
+      <figure
+        className={loginpageStyles.loginpage__logoWrapper}
+        onClick={() => router.push("/")}
+      >
         <img
           src={netflixLogo.src}
           className={loginpageStyles.loginpage__logo}
@@ -79,40 +83,40 @@ function Login() {
             <input type="checkbox" />
             <p>Remember me</p>
           </div>
-          <a href="/" className={loginpageStyles.loginpage__needHelp}>
+          <Link href="/" className={loginpageStyles.loginpage__needHelp}>
             Need help?
-          </a>
+          </Link>
         </div>
         <p>
           New to Netflix?{" "}
-          <a href="/" className={loginpageStyles.loginpage__signupLink}>
+          <Link href="/" className={loginpageStyles.loginpage__signupLink}>
             Sign up now.
-          </a>
+          </Link>
         </p>
         <p>
           This page is protected by Google reCAPTCHA to ensure you're not a bot.{" "}
-          <a href="/" className={loginpageStyles.loginpage__learnMore}>
+          <Link href="/" className={loginpageStyles.loginpage__learnMore}>
             Learn more.
-          </a>
+          </Link>
         </p>
       </div>
       <footer className={loginpageStyles.loginpage__footerContainer}>
         <div className={loginpageStyles.loginpage__footerRow}>
-          <a href="/">Questions? Contact us.</a>
+          <Link href="/">Questions? Contact us.</Link>
           <div className={loginpageStyles.loginpage__linksWrapper}>
             <div className={loginpageStyles.loginpage__footerLinks}>
-              <a href="">FAQ</a>
-              <a href="">Cookie Preferences</a>
+              <Link href="/">FAQ</Link>
+              <Link href="/">Cookie Preferences</Link>
             </div>
             <div className={loginpageStyles.loginpage__footerLinks}>
-              <a href="">Help Center</a>
-              <a href="">Corporate Information</a>
+              <Link href="/">Help Center</Link>
+              <Link href="/">Corporate Information</Link>
             </div>
             <div className={loginpageStyles.loginpage__footerLinks}>
-              <a href="">Terms of use</a>
+              <Link href="/">Terms of use</Link>
             </div>
             <div className={loginpageStyles.loginpage__footerLinks}>
-              <a href="">Privacy</a>
+              <Link href="/">Privacy</Link>
             </div>
           </div>
           <select id={loginpageStyles.loginpage__languageSelect}>

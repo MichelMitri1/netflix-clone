@@ -4,6 +4,7 @@ import { onAuthStateChanged, User } from "firebase/auth";
 import { auth } from "../components/firebase.js";
 import React, { useEffect, useState } from "react";
 import { useRouter, NextRouter } from "next/router";
+import Link from "next/link";
 
 function NavbarSetup() {
   const [user, setUser] = useState(null);
@@ -31,19 +32,19 @@ function NavbarSetup() {
           />
         </figure>
         {!user ? (
-          <a
+          <Link
             href="/login"
             className={navbarSetupStyles.navbarSetup__signInLink}
           >
             Sign In
-          </a>
+          </Link>
         ) : (
-          <a
+          <Link
             href="/logoutPage"
             className={navbarSetupStyles.navbarSetup__signInLink}
           >
             Sign Out
-          </a>
+          </Link>
         )}
       </div>
     </nav>

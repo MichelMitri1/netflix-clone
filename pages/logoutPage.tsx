@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logoutpageStyles from "../styles/LogoutPage.module.css";
 import netflixLogo from "../components/assets/netflix logo.png";
 import { useRouter, NextRouter } from "next/router";
+import Link from "next/link";
 
 function LogoutPage() {
   const router: NextRouter = useRouter();
@@ -67,21 +68,21 @@ function LogoutPage() {
       </div>
       <footer className={logoutpageStyles.logoutpage__footerContainer}>
         <div className={logoutpageStyles.logoutpage__footerRow}>
-          <a href="/">Questions? Contact us.</a>
+          <Link href="/">Questions? Contact us.</Link>
           <div className={logoutpageStyles.logoutpage__linksWrapper}>
             <div className={logoutpageStyles.logoutpage__footerLinks}>
-              <a href="">FAQ</a>
-              <a href="">Cookie Preferences</a>
+              <Link href="/">FAQ</Link>
+              <Link href="/">Cookie Preferences</Link>
             </div>
             <div className={logoutpageStyles.logoutpage__footerLinks}>
-              <a href="">Help Center</a>
-              <a href="">Corporate Information</a>
+              <Link href="/">Help Center</Link>
+              <Link href="/">Corporate Information</Link>
             </div>
             <div className={logoutpageStyles.logoutpage__footerLinks}>
-              <a href="">Terms of use</a>
+              <Link href="/">Terms of use</Link>
             </div>
             <div className={logoutpageStyles.logoutpage__footerLinks}>
-              <a href="">Privacy</a>
+              <Link href="/">Privacy</Link>
             </div>
           </div>
           <select id={logoutpageStyles.logoutpage__languageSelect}>

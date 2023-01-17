@@ -3,6 +3,7 @@ import FooterSetup from "../components/FooterSetup";
 import NavbarSetup from "../components/NavbarSetup";
 import CheckIcon from "@mui/icons-material/Check";
 import planformStyles from "../styles/PlanForm.module.css";
+import Link from "next/link";
 
 function planform() {
   return (
@@ -140,7 +141,7 @@ function planform() {
             HD (720p), Full HD (1080p), Ultra HD (4K) and HDR availability
             subject to your internet services and device capabilities. Not all
             content is available in all resolutions. See our{" "}
-            <a href="/">Terms of use</a> for more detail.
+            <Link href="/">Terms of use</Link> for more detail.
           </p>
           <br />
           <p
