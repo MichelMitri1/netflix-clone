@@ -97,7 +97,7 @@ function SetupPass() {
               fontSize: "18px",
             }}
           >
-            Just a few more steps and you're done!
+            Just a few more steps and you&apos;re done!
           </p>
           <p
             style={{
@@ -140,4 +140,3 @@ function SetupPass() {
 }
 
 export default SetupPass;
-
