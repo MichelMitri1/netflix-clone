@@ -1,42 +1,43 @@
 import React from "react";
 import footersetupStyles from "../styles/FooterSetup.module.css";
+import Link from "next/link";
 
 function FooterSetup() {
   return (
     <footer className={footersetupStyles.footerSetup__container}>
       <div className={footersetupStyles.footerSetup__row}>
-        <a href="/" className={footersetupStyles.footerSetup__link}>
+        <Link href="/" className={footersetupStyles.footerSetup__link}>
           Questions? Contact us.
-        </a>
+        </Link>
         <div className={footersetupStyles.footerSetup__linksWrapper}>
           <div className={footersetupStyles.footerSetup__rowOne}>
-            <a href="/" className={footersetupStyles.footerSetup__link}>
+            <Link href="/" className={footersetupStyles.footerSetup__link}>
               FAQ
-            </a>
-            <a href="/" className={footersetupStyles.footerSetup__link}>
+            </Link>
+            <Link href="/" className={footersetupStyles.footerSetup__link}>
               Privacy
-            </a>
+            </Link>
           </div>
           <div className={footersetupStyles.footerSetup__rowTwo}>
-            <a href="/" className={footersetupStyles.footerSetup__link}>
+            <Link href="/" className={footersetupStyles.footerSetup__link}>
               Help Center
-            </a>
-            <a href="/" className={footersetupStyles.footerSetup__link}>
+            </Link>
+            <Link href="/" className={footersetupStyles.footerSetup__link}>
               Cookie Preferences
-            </a>
+            </Link>
           </div>
           <div className={footersetupStyles.footerSetup__rowThree}>
-            <a href="/" className={footersetupStyles.footerSetup__link}>
+            <Link href="/" className={footersetupStyles.footerSetup__link}>
               Netflix Shop
-            </a>
-            <a href="/" className={footersetupStyles.footerSetup__link}>
+            </Link>
+            <Link href="/" className={footersetupStyles.footerSetup__link}>
               Corporate Information
-            </a>
+            </Link>
           </div>
           <div className={footersetupStyles.footerSetup__rowFour}>
-            <a href="/" className={footersetupStyles.footerSetup__link}>
+            <Link href="/" className={footersetupStyles.footerSetup__link}>
               Terms of use
-            </a>
+            </Link>
           </div>
         </div>
         <select id={footersetupStyles.footerSetup__selectLanguage}>
