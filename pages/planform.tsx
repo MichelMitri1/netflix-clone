@@ -16,7 +16,7 @@ function planform() {
             <span className={planformStyles.planform__steps}>3</span>
           </p>
           <h1 className={planformStyles.planform__header}>
-            Choose the plan that's right for you
+            Choose the plan that&apos;s right for you
           </h1>
           <div className={planformStyles.planform__planWrapper}>
             <CheckIcon
@@ -166,4 +166,3 @@ function planform() {
 }
 
 export default planform;
-
