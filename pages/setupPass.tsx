@@ -11,7 +11,7 @@ import {
   User,
 } from "firebase/auth";
 
-function setupPass() {
+function SetupPass() {
   // const [docs, setDocs]: any = useState([]);
   const emailRef = useRef() as unknown as MutableRefObject<HTMLInputElement>;
   const passwordRef = useRef() as unknown as MutableRefObject<HTMLInputElement>;
@@ -139,4 +139,5 @@ function setupPass() {
   );
 }
 
-export default setupPass;
+export default SetupPass;
+
