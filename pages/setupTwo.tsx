@@ -5,7 +5,7 @@ import { NextRouter, useRouter } from "next/router";
 import CheckIcon from "@mui/icons-material/Check";
 import React from "react";
 
-function setupTwo() {
+function SetupTwo() {
   const router: NextRouter = useRouter();
 
   return (
@@ -75,4 +75,5 @@ function setupTwo() {
   );
 }
 
-export default setupTwo;
+export default SetupTwo;
+
