@@ -94,7 +94,7 @@ function Login() {
           </Link>
         </p>
         <p>
-          This page is protected by Google reCAPTCHA to ensure you're not a bot.{" "}
+          This page is protected by Google reCAPTCHA to ensure you&apos;re not a bot.{" "}
           <Link href="/" className={loginpageStyles.loginpage__learnMore}>
             Learn more.
           </Link>
@@ -130,4 +130,3 @@ function Login() {
 }
 
 export default Login;
-
