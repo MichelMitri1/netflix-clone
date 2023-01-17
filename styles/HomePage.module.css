@@ -1,0 +1,222 @@
+.homepage__row {
+  background-image: url("../components/assets/netflix\ login\ background\ image.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 97vh;
+}
+
+.homepage__container {
+  background-color: black;
+}
+
+.homepage__wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  max-width: 600px;
+  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: white;
+  gap: 24px;
+}
+
+.homepage__title {
+  font-size: 48px;
+}
+
+.homepage__subtitle {
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.homepage__para {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.homepage__signupWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.homepage__signupInput {
+  width: 100%;
+  max-width: 450px;
+  padding: 10px;
+  height: 60px;
+  font-size: 16px;
+  border: none;
+}
+
+.homepage__signupInput:focus {
+  outline: none;
+}
+
+.homepage__signupButton {
+  width: 300px;
+  background-color: #e50914;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.homepage__loadingButton {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #e50914;
+  border: 3px solid rgb(131, 131, 255);
+  border-left: none;
+  border-bottom: none;
+  animation: loading 1s linear infinite;
+}
+
+.homepage__finishSignup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  align-items: center;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.homepage__card1Info,
+.homepage__card2Info,
+.homepage__card3Info,
+.homepage__card4Info {
+  display: flex;
+  flex-direction: column;
+  flex: 0.7;
+  gap: 12px;
+}
+
+.homepage__card2Wrapper,
+.homepage__card4Wrapper {
+  border-top: 8px solid rgb(58, 58, 58);
+  padding: 40px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+}
+
+.homepage__card4Wrapper {
+  border-bottom: 8px solid rgb(58, 58, 58);
+}
+
+.homepage__card1Wrapper,
+.homepage__card3Wrapper {
+  border-top: 8px solid rgb(58, 58, 58);
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+}
+
+.homepage__card1Img,
+.homepage__card2Img,
+.homepage__card3Img,
+.homepage__card4Img {
+  width: 100%;
+  max-width: 500px;
+}
+
+.homepage__card1Title,
+.homepage__card2Title,
+.homepage__card3Title,
+.homepage__card4Title {
+  font-size: 48px;
+}
+
+.homepage__card1Para,
+.homepage__card2Para,
+.homepage__card3Para,
+.homepage__card4Para {
+  font-size: 24px;
+}
+
+@media (max-width: 970px) {
+  .homepage__card1Wrapper,
+  .homepage__card2Wrapper,
+  .homepage__card3Wrapper,
+  .homepage__card4Wrapper {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .homepage__wrapper{
+    gap: 12px;
+  }
+
+  .homepage__title{
+    font-size: 32px;
+  }
+
+  .homepage__subtitle{
+    font-size: 24px;
+  }
+
+  .homepage__para{
+    font-size: 16px;
+  }
+  .homepage__card1Title,
+  .homepage__card2Title,
+  .homepage__card3Title,
+  .homepage__card4Title {
+    font-size: 32px;
+  }
+
+  .homepage__card1Para,
+  .homepage__card2Para,
+  .homepage__card3Para,
+  .homepage__card4Para {
+    font-size: 18px;
+  }
+
+  .homepage__card1ImgWrapper,
+  .homepage__card2ImgWrapper,
+  .homepage__card3ImgWrapper,
+  .homepage__card4ImgWrapper {
+    width: 300px;
+  }
+  .homepage__signupWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .homepage__signupButton{
+    width: 200px;
+  }
+}
+
+@media(max-width: 450px){
+
+  .homepage__wrapper{
+    margin-top: 64px;
+  }
+}

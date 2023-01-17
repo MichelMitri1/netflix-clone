@@ -1,0 +1,125 @@
+.logoutpage__container {
+  background: url("../components/assets/netflix-logout-background.jpg");
+}
+
+.logoutpage__row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.logoutpage__navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0px 16px;
+  margin: 0 auto;
+}
+
+.logoutpage__signInButton {
+  background-color: #e50914;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.logoutpage__wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  gap: 32px;
+  max-width: 430px;
+  color: black;
+  background-color: white;
+}
+
+.logoutpage__goNowButton {
+  background-color: #0080ff;
+  color: white;
+  padding: 16px 16px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.logoutpage__goNowButton:hover {
+  background-color: #2090ff;
+}
+
+.logoutpage__logoWrapper {
+  display: flex;
+}
+
+.logoutpage__logo {
+  width: 150px;
+}
+
+.logoutpage__footerContainer {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 20px;
+  color: grey;
+  margin-top: 70px;
+}
+
+.logoutpage__footerRow {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  gap: 48px;
+  margin: 0 auto;
+}
+
+.logoutpage__linksWrapper {
+  display: flex;
+  gap: 100px;
+}
+
+.logoutpage__footerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#logoutpage__languageSelect {
+  background-color: #000;
+  color: grey;
+  max-width: 100px;
+  border: none;
+  outline: none;
+  padding: 16px 16px 16px 5px;
+  cursor: pointer;
+  border: 1px solid rgb(67, 67, 67);
+}
+
+@media (max-width: 580px) {
+  .logoutpage__container {
+    background: white;
+  }
+  .logoutpage__footerContainer {
+    background: white;
+    border-top: 1px solid lightgrey;
+  }
+  .logoutpage__footerRow {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .logoutpage__linksWrapper {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .logoutpage__footerLinks {
+    align-items: center;
+  }
+}

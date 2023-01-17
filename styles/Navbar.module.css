@@ -1,0 +1,57 @@
+.navbar__container {
+  width: 100%;
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+.navbar__signInButton {
+  color: white;
+  background-color: #e50914;
+  width: 90px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.navbar__languageSelect {
+  background-color: transparent;
+  font-size: 16px;
+  padding: 8px;
+  border: solid rgb(255, 255, 255) 1px;
+  border-radius: 3px;
+  color: white;
+}
+
+.homepage__option {
+  background-color: grey;
+}
+
+.navbar__linksWrapper {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar__logoWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__logo {
+  width: 200px;
+}
+
+@media (max-width: 450px) {
+  .navbar__container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 100px;
+  }
+}
