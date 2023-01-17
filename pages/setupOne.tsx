@@ -5,7 +5,7 @@ import netflixStep1 from "../components/assets/netflix-step-1.PNG";
 import FooterSetup from "../components/FooterSetup";
 import { NextRouter, useRouter } from "next/router";
 
-function setupOne() {
+function SetupOne() {
   const router: NextRouter = useRouter();
 
   return (
@@ -34,4 +34,4 @@ function setupOne() {
   );
 }
 
-export default setupOne;
+export default SetupOne;
