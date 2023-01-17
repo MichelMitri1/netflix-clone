@@ -1,0 +1,45 @@
+.setup__row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px auto;
+  justify-content: center;
+  max-width: 350px;
+  padding: 0px 16px;
+  text-align: center;
+  gap: 16px;
+}
+
+.setup__imgWrapper {
+  display: flex;
+}
+
+.setup__img {
+  width: 100%;
+  max-width: 350px;
+}
+
+.setup__header {
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.setup__description {
+  font-size: 18px;
+}
+
+.setup__nextButton {
+  width: 100%;
+  max-width: 350px;
+  height: 60px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-color: #e50914;
+  color: white;
+}

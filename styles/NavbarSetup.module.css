@@ -1,0 +1,40 @@
+.navbarSetup__container {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.25);
+}
+.navbarSetup__row {
+  max-width: 1450px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.navbarSetup__logoWrapper {
+  display: flex;
+  cursor: pointer;
+}
+
+.navbarSetup__logo {
+  width: 200px;
+}
+
+.navbarSetup__signInLink {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.navbarSetup__signInLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 790px) {
+  .navbarSetup__row{
+    padding: 0px 16px;
+  }
+}
+
+@media (max-width: 460px) {
+  .navbarSetup__logo{
+    width: 100px;
+  }
+}
+
