@@ -1,7 +1,7 @@
 import React from "react";
 import NavbarSetup from "../components/NavbarSetup";
 import setupStyles from "../styles/Setup.module.css";
-import netflixStep1 from "../components/assets/netflix-step-1.PNG";
+import netflixStep1 from "../components/assets/netflixStep1.png";
 import FooterSetup from "../components/FooterSetup";
 import { NextRouter, useRouter } from "next/router";
 
