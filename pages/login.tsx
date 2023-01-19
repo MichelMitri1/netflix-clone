@@ -71,7 +71,6 @@ function Login() {
                 opacity: "0.8",
                 display: "flex",
                 justifyContent: "center",
-                alightItems: "center",
               }}
             >
               <div className={loginpageStyles.loginpage__loadingButton}></div>
