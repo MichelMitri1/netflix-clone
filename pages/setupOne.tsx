@@ -13,7 +13,7 @@ function SetupOne() {
       <NavbarSetup />
       <div className={setupStyles.setup__row}>
         <figure className={setupStyles.setup__imgWrapper}>
-          <img src={netflixStep1.src} className={setupStyles.setup__img} />
+<!--           <img src={netflixStep1.src} className={setupStyles.setup__img} /> -->
         </figure>
         <h1 className={setupStyles.setup__header}>
           Finish setting up your account
