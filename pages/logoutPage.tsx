@@ -14,7 +14,6 @@ function LogoutPage() {
   function goBack() {
     if (user) {
       signOut(auth);
-      router.push("/");
     }
   }
 
