@@ -1,31 +1,24 @@
 import setupPassStyles from "../styles/SetupPass.module.css";
 import { collection, addDoc } from "firebase/firestore";
-import React, { MutableRefObject, useRef } from "react";
+import React, { MutableRefObject, useEffect, useRef } from "react";
 import { NextRouter, useRouter } from "next/router";
 import NavbarSetup from "../components/NavbarSetup";
 import FooterSetup from "../components/FooterSetup";
 import { auth, db } from "../components/firebase";
+import { useSelector } from "react-redux";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   User,
 } from "firebase/auth";
 
-function setupPass() {
-  // const [docs, setDocs]: any = useState([]);
+function SetupPass() {
   const emailRef = useRef() as unknown as MutableRefObject<HTMLInputElement>;
   const passwordRef = useRef() as unknown as MutableRefObject<HTMLInputElement>;
   const router: NextRouter = useRouter();
   const user: User | null = auth.currentUser;
-
-  // async function getAllUsers(): Promise<void> {
-  //   const q: Query<DocumentData> = query(collection(db, "userInfo"));
-  //   onSnapshot(q, (snapshot: any) =>
-  //     setDocs(
-  //       snapshot.docs.map((elem: any) => ({ ...elem.data(), id: elem.id }))
-  //     )
-  //   );
-  // }
+  const userInfo = useSelector((state: any) => state.user.value);
+  console.log(userInfo);
 
   async function rateMovie(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -58,27 +51,11 @@ function setupPass() {
     }
   }
 
-  // if (docs[0] === undefined) {
-  //   null
-  // }else{
-  //   console.log(docs[0].email);
-  //   const found = docs.find(
-  //     (doc: any) => doc[0].email === emailRef.current.value
-  //   );
-  //   console.log(found);
-  //   codedId = found.id;
-  // }
-
-  // const ratingRef = doc(db, "ratings", codedId);
-  // const newRating = {
-  //   email: emailRef.current.value,
-  //   password: passwordRef.current.value,
-  // };
-  // await updateDoc(ratingRef, newRating);
-
-  // useEffect(() => {
-  //   getAllUsers();
-  // }, []);
+  useEffect(() => {
+  if (userInfo.email !== '') {
+    emailRef.current.value = userInfo.email
+  }
+  }, [])
 
   return (
     <div className={setupPassStyles.setupPass__container}>
@@ -97,7 +74,7 @@ function setupPass() {
               fontSize: "18px",
             }}
           >
-            Just a few more steps and you're done!
+            Just a few more steps and you&apos;re done!
           </p>
           <p
             style={{
@@ -139,4 +116,4 @@ function setupPass() {
   );
 }
 
-export default setupPass;
+export default SetupPass;

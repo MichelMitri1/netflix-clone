@@ -1,9 +1,10 @@
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import homepageStyles from "../styles/HomePage.module.css";
-import { addDoc, collection } from "firebase/firestore";
-import { db, auth } from "../components/firebase.js";
-import { NextRouter, useRouter } from "next/router";
 import { onAuthStateChanged, User } from "firebase/auth";
+import { NextRouter, useRouter } from "next/router";
+import { auth } from "../components/firebase.js";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "./features/user";
 import Questions from "./Questions";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -22,10 +23,12 @@ import React, {
 
 function HomePage() {
   const emailRef = useRef("") as unknown as MutableRefObject<HTMLInputElement>;
-  const router: NextRouter = useRouter();
-  const [user, setUser] = useState(null);
   const [loading, setLoading]: [boolean, Dispatch<SetStateAction<boolean>>] =
-    useState(false);
+  useState(false);
+  const userInfo = useSelector((state: any) => state.user.value);
+  const dispatch = useDispatch();
+  const router: NextRouter = useRouter();
+  const [user, setUser]: any = useState(null);
 
   function enterEmail(e: React.MouseEvent<HTMLFormElement, MouseEvent>): void {
     e.preventDefault();
@@ -34,9 +37,12 @@ function HomePage() {
     }
     setLoading(true);
     console.log(emailRef.current.value);
-    // addDoc(collection(db, "userInfo"), {
-    //   email: emailRef.current.value,
-    // });
+    dispatch(
+      login({
+        email: emailRef.current.value,
+      })
+    );
+    console.log(userInfo);
     router.push("/setupOne");
   }
 
@@ -72,6 +78,7 @@ function HomePage() {
                 <input
                   type="email"
                   placeholder="Email address"
+                  required
                   className={homepageStyles.homepage__signupInput}
                   ref={emailRef}
                 />

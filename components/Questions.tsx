@@ -88,7 +88,7 @@ function Questions({ user }: any) {
     console.log(answer.answerOpened);
   }
 
-  function enterEmail(e: React.MouseEvent<HTMLFormElement, MouseEvent>): void {
+  function enterEmail(e: any): void {
     e.preventDefault();
     if (!emailRef.current.value) {
       return;

@@ -71,7 +71,6 @@ function Login() {
                 opacity: "0.8",
                 display: "flex",
                 justifyContent: "center",
-                alightItems: "center",
               }}
             >
               <div className={loginpageStyles.loginpage__loadingButton}></div>
@@ -94,7 +93,7 @@ function Login() {
           </Link>
         </p>
         <p>
-          This page is protected by Google reCAPTCHA to ensure you're not a bot.{" "}
+          This page is protected by Google reCAPTCHA to ensure you&apos;re not a bot.{" "}
           <Link href="/" className={loginpageStyles.loginpage__learnMore}>
             Learn more.
           </Link>
