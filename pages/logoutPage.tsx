@@ -1,14 +1,25 @@
-import React, { useState } from "react";
-import logoutpageStyles from "../styles/LogoutPage.module.css";
 import netflixLogo from "../components/assets/netflix logo.png";
+import logoutpageStyles from "../styles/LogoutPage.module.css";
 import { useRouter, NextRouter } from "next/router";
+import { auth } from "../components/firebase.js";
+import React, { useState } from "react";
+import { signOut } from "firebase/auth";
 import Link from "next/link";
 
 function LogoutPage() {
+  const user = auth.currentUser;
   const router: NextRouter = useRouter();
   const [time, setTime] = useState(30);
 
+  function goBack() {
+    if (user) {
+      signOut(auth);
+      router.push("/");
+    }
+  }
+
   setTimeout(() => {
+    signOut(auth);
     router.push("/");
   }, 30000);
 
@@ -28,7 +39,7 @@ function LogoutPage() {
           </figure>
           <button
             className={logoutpageStyles.logoutpage__signInButton}
-            onClick={() => router.push("/login")}
+            onClick={() => goBack()}
           >
             Sign In
           </button>
@@ -47,8 +58,9 @@ function LogoutPage() {
               fontSize: "18px",
             }}
           >
-            Just so you know, you don&apos;t always need to sign out of Netlfix. It&apos;s
-            only necessary if you&apos;re on a shared or public computer.
+            Just so you know, you don&apos;t always need to sign out of Netlfix.
+            It&apos;s only necessary if you&apos;re on a shared or public
+            computer.
           </p>
           <p
             style={{
@@ -96,4 +108,5 @@ function LogoutPage() {
 }
 
 export default LogoutPage;
+
 
