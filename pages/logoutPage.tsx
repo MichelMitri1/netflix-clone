@@ -12,9 +12,7 @@ function LogoutPage() {
   const [time, setTime] = useState(30);
 
   function goBack() {
-    if (user) {
       signOut(auth);
-    }
   }
 
   setTimeout(() => {
