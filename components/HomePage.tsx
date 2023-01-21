@@ -1,10 +1,10 @@
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import homepageStyles from "../styles/HomePage.module.css";
-import { onAuthStateChanged, User } from "firebase/auth";
-import { NextRouter, useRouter } from "next/router";
-import { auth } from "../components/firebase.js";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "./features/user";
+import { NextRouter, useRouter } from "next/router";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../components/firebase.js";
+import { login } from "./user";
 import Questions from "./Questions";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -24,7 +24,7 @@ import React, {
 function HomePage() {
   const emailRef = useRef("") as unknown as MutableRefObject<HTMLInputElement>;
   const [loading, setLoading]: [boolean, Dispatch<SetStateAction<boolean>>] =
-  useState(false);
+    useState(false);
   const userInfo = useSelector((state: any) => state.user.value);
   const dispatch = useDispatch();
   const router: NextRouter = useRouter();
