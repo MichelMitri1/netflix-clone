@@ -7,12 +7,12 @@ import { signOut } from "firebase/auth";
 import Link from "next/link";
 
 function LogoutPage() {
-  const user = auth.currentUser;
   const router: NextRouter = useRouter();
   const [time, setTime] = useState(30);
 
   function goBack() {
-      signOut(auth);
+    signOut(auth);
+    router.push("/");
   }
 
   setTimeout(() => {
@@ -36,7 +36,7 @@ function LogoutPage() {
           </figure>
           <button
             className={logoutpageStyles.logoutpage__signInButton}
-            onClick={() => goBack()}
+            onClick={() => router.push("/login")}
           >
             Sign In
           </button>
@@ -69,7 +69,7 @@ function LogoutPage() {
           </p>
           <button
             className={logoutpageStyles.logoutpage__goNowButton}
-            onClick={() => router.push("/")}
+            onClick={() => goBack()}
           >
             Go Now
           </button>
