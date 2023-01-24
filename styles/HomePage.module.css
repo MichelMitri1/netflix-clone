@@ -69,6 +69,14 @@
   gap: 12px;
 }
 
+.homepage__finishSignup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  align-items: center;
+}
+
 .homepage__loadingButton {
   width: 30px;
   height: 30px;
@@ -80,13 +88,6 @@
   animation: loading 1s linear infinite;
 }
 
-.homepage__finishSignup {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 24px;
-  align-items: center;
-}
 
 @keyframes loading {
   0% {
