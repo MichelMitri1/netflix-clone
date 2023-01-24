@@ -1,8 +1,8 @@
 import netflixLogo from "../components/assets/netflix logo.png";
-import { signOut, onAuthStateChanged, User } from "firebase/auth";
+import { signOut } from "firebase/auth";
 import navbarStyles from "../styles/Navbar.module.css";
 import { NextRouter, useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { auth } from "../components/firebase.js";
 
 function Navbar({ user }: any) {

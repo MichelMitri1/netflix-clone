@@ -2,7 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
-import userReducer from "../components/features/user.js";
+import userReducer from "../components/user.js";
 
 const store = configureStore({
   reducer: {

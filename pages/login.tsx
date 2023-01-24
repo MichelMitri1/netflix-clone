@@ -13,10 +13,18 @@ function Login() {
   ) as unknown as MutableRefObject<HTMLInputElement>;
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [loginError, setLoginError] = useState("");
 
   async function loginUser(e: any): Promise<void> {
     e.preventDefault();
     setLoading(true);
+    if (!emailRef.current.value || !passwordRef.current.value) {
+      setLoginError(
+        "Please enter a valid email address and a password to procceed."
+      );
+      setLoading(false);
+      return;
+    }
     try {
       await signInWithEmailAndPassword(
         auth,
@@ -24,10 +32,9 @@ function Login() {
         passwordRef.current.value
       );
       router.push("/");
-    } catch (error: unknown) {
+    } catch (error: any) {
       setLoading(false);
-      alert(error);
-      console.log("user is not signed in");
+      setLoginError(error.message);
     }
   }
 
@@ -48,6 +55,13 @@ function Login() {
           onSubmit={(e) => loginUser(e)}
         >
           <h2 className={loginpageStyles.loginpage__title}>Sign In</h2>
+          <p
+            style={{
+              color: "#ffa00a",
+            }}
+          >
+            {loginError}
+          </p>
           <input
             type="email"
             placeholder="Email address"
@@ -93,7 +107,8 @@ function Login() {
           </Link>
         </p>
         <p>
-          This page is protected by Google reCAPTCHA to ensure you&apos;re not a bot.{" "}
+          This page is protected by Google reCAPTCHA to ensure you&apos;re not a
+          bot.{" "}
           <Link href="/" className={loginpageStyles.loginpage__learnMore}>
             Learn more.
           </Link>

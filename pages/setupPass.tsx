@@ -1,6 +1,6 @@
+import React, { MutableRefObject, useEffect, useRef, useState } from "react";
 import setupPassStyles from "../styles/SetupPass.module.css";
 import { collection, addDoc } from "firebase/firestore";
-import React, { MutableRefObject, useEffect, useRef } from "react";
 import { NextRouter, useRouter } from "next/router";
 import NavbarSetup from "../components/NavbarSetup";
 import FooterSetup from "../components/FooterSetup";
@@ -18,10 +18,18 @@ function SetupPass() {
   const router: NextRouter = useRouter();
   const user: User | null = auth.currentUser;
   const userInfo = useSelector((state: any) => state.user.value);
-  console.log(userInfo);
+  const [loginError, setLoginError] = useState("");
+  const [login, setLogin] = useState(false);
 
   async function rateMovie(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (!emailRef.current.value || !passwordRef.current.value) {
+      setLoginError(
+        "Please enter a valid email address and password to procceed."
+      );
+      return;
+    }
+    setLogin(true);
     try {
       await createUserWithEmailAndPassword(
         auth,
@@ -43,19 +51,20 @@ function SetupPass() {
       }
     } catch (error: any) {
       if (error) {
-        router.push("/setupPass");
+        // console.log(error.code);
+        setLoginError(error.message);
+        setLogin(false);
       } else {
         router.push("/setupTwo");
       }
-      alert(error);
     }
   }
 
   useEffect(() => {
-  if (userInfo.email !== '') {
-    emailRef.current.value = userInfo.email
-  }
-  }, [])
+    if (userInfo.email !== "") {
+      emailRef.current.value = userInfo.email;
+    }
+  }, []);
 
   return (
     <div className={setupPassStyles.setupPass__container}>
@@ -83,6 +92,14 @@ function SetupPass() {
           >
             We hate papwerwork, too.
           </p>
+          <p
+            style={{
+              color: "#ffa00a",
+              textAlign: "start",
+            }}
+          >
+            {loginError}
+          </p>
           <input
             type="email"
             placeholder="Email"
@@ -102,13 +119,20 @@ function SetupPass() {
             />
             <p>Please do not email me Netflix special offers.</p>
           </div>
-
-          <button
-            className={setupPassStyles.setupPass__nextButton}
-            // onClick={() => rateMovie()}
-          >
-            Next
-          </button>
+          {!login ? (
+            <button className={setupPassStyles.setupPass__nextButton}>
+              Next
+            </button>
+          ) : (
+            <button
+              className={setupPassStyles.setupPass__nextButton}
+              style={{
+                opacity: "0.8",
+              }}
+            >
+              <div className={setupPassStyles.setupPass__loadingButton}></div>
+            </button>
+          )}
         </div>
       </form>
       <FooterSetup />

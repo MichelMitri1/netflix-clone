@@ -1,11 +1,11 @@
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import homepageStyles from "../styles/HomePage.module.css";
-import { onAuthStateChanged, User } from "firebase/auth";
-import { NextRouter, useRouter } from "next/router";
-import { auth } from "../components/firebase.js";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "./features/user";
+import { NextRouter, useRouter } from "next/router";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../components/firebase.js";
 import Questions from "./Questions";
+import { login } from "./user";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Card1 from "./Card1";
@@ -24,25 +24,23 @@ import React, {
 function HomePage() {
   const emailRef = useRef("") as unknown as MutableRefObject<HTMLInputElement>;
   const [loading, setLoading]: [boolean, Dispatch<SetStateAction<boolean>>] =
-  useState(false);
-  const userInfo = useSelector((state: any) => state.user.value);
+    useState(false);
+  // const userInfo = useSelector((state: any) => state.user.value);
   const dispatch = useDispatch();
   const router: NextRouter = useRouter();
   const [user, setUser]: any = useState(null);
 
-  function enterEmail(e: React.MouseEvent<HTMLFormElement, MouseEvent>): void {
+  function enterEmail(e: any): void {
     e.preventDefault();
     if (!emailRef.current.value) {
       return;
     }
     setLoading(true);
-    console.log(emailRef.current.value);
     dispatch(
       login({
         email: emailRef.current.value,
       })
     );
-    console.log(userInfo);
     router.push("/setupOne");
   }
 
@@ -73,7 +71,7 @@ function HomePage() {
               </p>
               <form
                 className={homepageStyles.homepage__signupWrapper}
-                onClick={(e) => enterEmail(e)}
+                onSubmit={(e) => enterEmail(e)}
               >
                 <input
                   type="email"
@@ -99,6 +97,13 @@ function HomePage() {
                   </button>
                 )}
               </form>
+              <p
+                style={{
+                  color: "#ffa00a",
+                  textAlign: "start",
+                }}
+              >
+              </p>
             </>
           ) : (
             <div className={homepageStyles.homepage__finishSignup}>

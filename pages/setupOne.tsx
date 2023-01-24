@@ -4,7 +4,6 @@ import setupStyles from "../styles/Setup.module.css";
 import netflixStep1 from "../components/assets/netflix-step-1.png";
 import FooterSetup from "../components/FooterSetup";
 import { NextRouter, useRouter } from "next/router";
-import { useSelector } from "react-redux";
 
 function SetupOne() {
   const router: NextRouter = useRouter();
