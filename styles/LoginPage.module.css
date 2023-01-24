@@ -1,7 +1,7 @@
 .loginpage__container {
   background-image: url("../components/assets/netflix\ login\ background\ image.jpg");
   background-position: center;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
 }
 
 .loginpage__logoWrapper {
