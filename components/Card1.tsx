@@ -1,9 +1,6 @@
 import React from 'react'
 import netflixTV from "./assets/netflix-tv.png";
 import homepageStyles from "../styles/HomePage.module.css";
-import netflixMobile from "./assets/netflix-mobile.jpg";
-import netflixDevicePile from "./assets/netflix-device-pile.png";
-import netflixKids from "./assets/netflix-kids.png";
 
 function Card1() {
   return (

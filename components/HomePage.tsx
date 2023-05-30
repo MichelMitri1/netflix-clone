@@ -20,13 +20,14 @@ import React, {
   useRef,
   useState,
 } from "react";
+import { AnyAction } from "redux";
 
 function HomePage() {
   const emailRef = useRef("") as unknown as MutableRefObject<HTMLInputElement>;
   const [loading, setLoading]: [boolean, Dispatch<SetStateAction<boolean>>] =
     useState(false);
   // const userInfo = useSelector((state: any) => state.user.value);
-  const dispatch = useDispatch();
+  const dispatch: Dispatch<AnyAction> = useDispatch();
   const router: NextRouter = useRouter();
   const [user, setUser]: any = useState(null);
 
@@ -102,8 +103,7 @@ function HomePage() {
                   color: "#ffa00a",
                   textAlign: "start",
                 }}
-              >
-              </p>
+              ></p>
             </>
           ) : (
             <div className={homepageStyles.homepage__finishSignup}>

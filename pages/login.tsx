@@ -1,9 +1,9 @@
-import React, { MutableRefObject, useRef, useState } from "react";
+import React, { Dispatch, MutableRefObject, SetStateAction, useRef, useState } from "react";
 import loginpageStyles from "../styles/LoginPage.module.css";
 import netflixLogo from "../components/assets/netflix logo.png";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../components/firebase.js";
-import { useRouter } from "next/router";
+import { NextRouter, useRouter } from "next/router";
 import Link from "next/link";
 
 function Login() {
@@ -11,9 +11,9 @@ function Login() {
   const passwordRef = useRef(
     ""
   ) as unknown as MutableRefObject<HTMLInputElement>;
-  const router = useRouter();
-  const [loading, setLoading] = useState(false);
-  const [loginError, setLoginError] = useState("");
+  const router: NextRouter = useRouter();
+  const [loading, setLoading]: [boolean, Dispatch<SetStateAction<boolean>>] = useState(false);
+  const [loginError, setLoginError]: [string, Dispatch<SetStateAction<string>>] = useState("");
 
   async function loginUser(e: any): Promise<void> {
     e.preventDefault();

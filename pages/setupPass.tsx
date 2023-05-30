@@ -1,4 +1,11 @@
-import React, { MutableRefObject, useEffect, useRef, useState } from "react";
+import React, {
+  Dispatch,
+  MutableRefObject,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import setupPassStyles from "../styles/SetupPass.module.css";
 import { collection, addDoc } from "firebase/firestore";
 import { NextRouter, useRouter } from "next/router";
@@ -18,10 +25,14 @@ function SetupPass() {
   const router: NextRouter = useRouter();
   const user: User | null = auth.currentUser;
   const userInfo = useSelector((state: any) => state.user.value);
-  const [loginError, setLoginError] = useState("");
-  const [login, setLogin] = useState(false);
+  const [loginError, setLoginError]: [
+    string,
+    Dispatch<SetStateAction<string>>
+  ] = useState("");
+  const [login, setLogin]: [boolean, Dispatch<SetStateAction<boolean>>] =
+    useState(false);
 
-  async function rateMovie(e: React.FormEvent<HTMLFormElement>) {
+  async function rateMovie(e: React.FormEvent<HTMLFormElement>): Promise<void> {
     e.preventDefault();
     if (!emailRef.current.value || !passwordRef.current.value) {
       setLoginError(

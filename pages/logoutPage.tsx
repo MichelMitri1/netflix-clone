@@ -2,13 +2,14 @@ import netflixLogo from "../components/assets/netflix logo.png";
 import logoutpageStyles from "../styles/LogoutPage.module.css";
 import { useRouter, NextRouter } from "next/router";
 import { auth } from "../components/firebase.js";
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import { signOut } from "firebase/auth";
 import Link from "next/link";
 
 function LogoutPage() {
   const router: NextRouter = useRouter();
-  const [time, setTime] = useState(30);
+  const [time, setTime]: [number, Dispatch<SetStateAction<number>>] =
+    useState(30);
 
   function goBack() {
     signOut(auth);

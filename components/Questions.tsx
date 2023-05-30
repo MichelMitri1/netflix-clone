@@ -17,9 +17,15 @@ function Questions({ user }: any) {
     boolean,
     Dispatch<SetStateAction<boolean>>
   ] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading]: [boolean, Dispatch<SetStateAction<boolean>>] =
+    useState(false);
 
-  const answers = [
+  const answers: {
+    id: number;
+    answerOpened: boolean;
+    question: string;
+    answer: string;
+  }[] = [
     {
       id: 1,
       answerOpened: false,
@@ -63,7 +69,7 @@ function Questions({ user }: any) {
     },
   ];
 
-  function openAnswer(answer: any) {
+  function openAnswer(answer: any): void {
     if (answerOpened) {
       setAnswerOpened(false);
       answer.answerOpened = answerOpened;

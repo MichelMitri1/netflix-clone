@@ -8,7 +8,7 @@ import Link from "next/link";
 
 function NavbarSetup() {
   const [user, setUser] = useState(null);
-  const router = useRouter();
+  const router: NextRouter = useRouter();
 
   useEffect(() => {
     onAuthStateChanged(auth, (user: any) => {
