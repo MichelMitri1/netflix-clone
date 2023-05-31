@@ -226,8 +226,8 @@ function Questions({ user }: any) {
             award-winning TV shows, movies, anime, documentaries, and more on
             thousands of internet-connected devices. You can watch as much as
             you want, whenever you want without a single commercial all for one
-            low monthly price. There's always something new to discover and new
-            TV shows and movies are added every week!
+            low monthly price. There&apos;s always something new to discover and
+            new TV shows and movies are added every week!
           </div>
         ) : null}
         <div
@@ -266,8 +266,8 @@ function Questions({ user }: any) {
             including smart TVs, smartphones, tablets, streaming media players
             and game consoles. You can also download your favorite shows with
             the iOS, Android, or Windows 10 app. Use downloads to watch while
-            you're on the go and without an internet connection. Take Netflix
-            with you anywhere.
+            you&apos;re on the go and without an internet connection. Take
+            Netflix with you anywhere.
           </div>
         ) : null}
 
