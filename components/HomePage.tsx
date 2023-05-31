@@ -30,10 +30,13 @@ function HomePage() {
   const dispatch: Dispatch<AnyAction> = useDispatch();
   const router: NextRouter = useRouter();
   const [user, setUser]: any = useState(null);
+  const [message, setMessage]: [string, Dispatch<SetStateAction<string>>] =
+    useState("");
 
   function enterEmail(e: any): void {
     e.preventDefault();
     if (!emailRef.current.value) {
+      setMessage("Please enter an email address.")
       return;
     }
     setLoading(true);
@@ -77,25 +80,28 @@ function HomePage() {
                 <input
                   type="email"
                   placeholder="Email address"
-                  required
                   className={homepageStyles.homepage__signupInput}
                   ref={emailRef}
                 />
                 {!loading ? (
-                  <button className={homepageStyles.homepage__signupButton}>
-                    Get Started <ArrowForwardIosIcon />
-                  </button>
+                  <>
+                    <button className={homepageStyles.homepage__signupButton}>
+                      Get Started <ArrowForwardIosIcon />
+                    </button>
+                  </>
                 ) : (
-                  <button
-                    className={homepageStyles.homepage__signupButton}
-                    style={{
-                      opacity: "0.6",
-                    }}
-                  >
-                    <div
-                      className={homepageStyles.homepage__loadingButton}
-                    ></div>
-                  </button>
+                  <>
+                    <button
+                      className={homepageStyles.homepage__signupButton}
+                      style={{
+                        opacity: "0.6",
+                      }}
+                    >
+                      <div
+                        className={homepageStyles.homepage__loadingButton}
+                      ></div>
+                    </button>
+                  </>
                 )}
               </form>
               <p
@@ -103,7 +109,9 @@ function HomePage() {
                   color: "#ffa00a",
                   textAlign: "start",
                 }}
-              ></p>
+              >
+                {message}
+              </p>
             </>
           ) : (
             <div className={homepageStyles.homepage__finishSignup}>
